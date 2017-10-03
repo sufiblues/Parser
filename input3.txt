@@ -1,0 +1,18 @@
+read a
+read b
+read c
+read d
+if a > b
+b := b + 1
+fi
+if b > c
+c := c + 1
+fi
+if c > d
+d := d + 1
+fi
+write a
+write b
+write c
+write d
+$$

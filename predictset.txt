@@ -1,0 +1,76 @@
+First Sets
+$$ 	$$
+ε 	ε
+id 	id
+:= 	:=
+read 	read
+write 	write
+if 	if
+fi 	fi
+do 	do
+od 	od
+check 	check
+( 	(
+) 	)
+lit 	lit
+== 	==
+<> 	<>
+< 	<
+> 	>
+<= 	<=
+>= 	>=
++ 	+
+- 	-
+* 	*
+/ 	/
+P 	$$, ε, id, read, write, if, do, check
+SL 	ε, id, read, write, if, do, check
+S 	id, read, write, if, do, check
+F 	(, id, lit
+ET 	ε, ==, <>, <, >, <=, >=
+TT 	ε, +, -
+FT 	ε, *, /
+ro 	==, <>, <, >, <=, >=
+ao 	+, -
+mo 	*, /
+T 	(, id, lit
+E 	(, id, lit
+R 	(, id, lit
+
+Follow Sets
+P 	$
+SL 	fi, od, $$
+S 	id, read, write, if, do, check, fi, od, $$
+R 	), id, read, write, if, do, check, fi, od, $$
+E 	==, <>, <, >, <=, >=, ), id, read, write, if, do, check, fi, od, $$
+T 	+, -, ==, <>, <, >, <=, >=, ), id, read, write, if, do, check, fi, od, $$
+F 	*, /, +, -, ==, <>, <, >, <=, >=, ), id, read, write, if, do, check, fi, od, $$
+ET 	), id, read, write, if, do, check, fi, od, $$
+TT 	==, <>, <, >, <=, >=, ), id, read, write, if, do, check, fi, od, $$
+FT 	+, -, ==, <>, <, >, <=, >=, ), id, read, write, if, do, check, fi, od, $$
+ro 	(, id, lit
+ao 	(, id, lit
+mo 	(, id, lit
+
+Predict Sets
+P → SL $$ 	id, read, write, if, do, check, $$
+SL → S SL 	id, read, write, if, do, check
+SL → ε 	fi, od, $$
+S → id := R 	id
+S → read id 	read
+S → write R 	write
+S → if R SL fi 	if
+S → do SL od 	do
+S → check R 	check
+R → E ET 	(, id, lit
+E → T TT 	(, id, lit
+T → F FT 	(, id, lit
+F → ( R ) 	(
+F → id 	id
+F → lit 	lit
+ET → ro E 	==, <>, <, >, <=, >=
+ET → ε 	), id, read, write, if, do, check, fi, od, $$
+TT → ao T TT 	+, -
+TT → ε 	==, <>, <, >, <=, >=, ), id, read, write, if, do, check, fi, od, $$
+FT → mo F FT 	*, /
+FT → ε 	+, -, ==, <>, <, >, <=, >=, ), id, read, write, if, do, check, fi, od, $$
