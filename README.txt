@@ -1,7 +1,6 @@
 Ali Hamdani
 CSC 254
 ahamdani@u.rochester.edu
-Partner:Alexander Senatore
 
 ~~~~~~~~~~~~Files~~~~~~~~~~~~~~~~
 scan.cpp- This file has the scan method that we use to take input from a stream. The file also has global variables that take into account useful counters like line counters that we use for error handling. 
@@ -32,9 +31,6 @@ go to the directory > edit the input files we have given you for your own person
 
 to test the error andler:
 cd dir> g++ parser_error_handler.cpp -o parser > ./parser > enter program > read output.
-
-~~~~~~~~~~~Division of Labor~~~~~
-Alec and I would work together side by side on this project. Sometimes we would come to an impass about what approach we would use to solve a problem. In that case we would both try our approaches and see which one would work in the end. 
 
 ~~~~~~~~~~~Problems~~~~~~~~~~~
 So first of all our attribute grammar sometimes does not work with parenthesis however I included a differnt parser does work with all cases. I do not know what the problem is but we get segfaults with the attribute grammar. If we had more time we would definately come to office hours to get it fixed because there is not reason why it should not work. 
